@@ -39,5 +39,11 @@ describe("Filter Function", () => {
   test("first element  predicate (el => el === -1)", () => {
     expect(find([1, 2, 0, [-1, 2]], (el, i, arr) => el === -1)).toStrictEqual(-1)
   });
+
+  test('predicate called times', () => {
+    const predicate = jest.fn();
+    find(predicate);
+    expect(predicate).toHaveBeenCalledTimes(0);
+  })
 });
 

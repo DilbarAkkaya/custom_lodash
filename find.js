@@ -1,4 +1,5 @@
 function find(array, predicate, fromIndex = 0) {
+  if (!predicate) return undefined
   for (let i = 0; i < array.length; i += 1) {
     if (!Array.isArray(array[i])) {
       if (predicate(array[i])) {
